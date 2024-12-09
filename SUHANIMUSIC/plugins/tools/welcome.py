@@ -163,7 +163,7 @@ def circle(pfp, size=(200, 200), brightness_factor=10):
     return outline
 
 def welcomepic(user_id, user_username, user_names, chat_name, user_photo, chat_photo):
-    background = Image.open("assets/wel2.png")
+    background = Image.open("SUHANIMUSIC/assets/wel2.png")
     user_img = Image.open(user_photo).convert("RGBA")
 
 
@@ -173,7 +173,7 @@ def welcomepic(user_id, user_username, user_names, chat_name, user_photo, chat_p
     background.paste(user_img_circle, (320, 300), user_img_circle)
 
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype("assets/font.ttf", size=32)
+    font = ImageFont.truetype("SUHANIMUSIC/assets/font.ttf", size=32)
 
 
     saffron = (255, 153, 51)  
@@ -224,9 +224,9 @@ async def greet_new_members(_, member: ChatMemberUpdated):
                 if users_photo:
                     user_photo = users_photo
                 else:
-                    user_photo = "assets/nodp.png"
+                    user_photo = "SUHANIMUSIC/assets/nodp.png"
             except AttributeError:
-                user_photo = "assets/nodp.png"
+                user_photo = "SUHANIMUSIC/assets/nodp.png"
 
             try:
                 groups_photo = await app.download_media(
