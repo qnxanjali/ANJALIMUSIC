@@ -235,9 +235,9 @@ async def greet_new_members(_, member: ChatMemberUpdated):
                 if groups_photo:
                     chat_photo = groups_photo
                 else:
-                    chat_photo = "assets/nodp.png"
+                    chat_photo = "SUHANIMUSIC/assets/nodp.png"
             except AttributeError:
-                chat_photo = "assets/nodp.png"
+                chat_photo = "SUHANIMUSIC/assets/nodp.png"
 
             welcomeimg = welcomepic(user_id, user_username, user_names, chat_name, user_photo, chat_photo)
             reply_markup = InlineKeyboardMarkup(
