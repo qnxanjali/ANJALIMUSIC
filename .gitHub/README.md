@@ -14,7 +14,7 @@
 GO TO [RELOAD.PY](https://github.com/qnxanjali/SUHANIMUSIC/blob/Master/SUHANIMUSIC/plugins/tools/reload.py) THEN CHANGE MY ID NUMBER 
 
 <p align="center">
-  <img width="500" src="https://envs.sh/pfv.jpg">
+  <img width="500" src="https://envs.sh/1ZY.jpg">
 </p>
 
 <p align="center">
@@ -22,7 +22,7 @@ GO TO [RELOAD.PY](https://github.com/qnxanjali/SUHANIMUSIC/blob/Master/SUHANIMUS
 </p>
 
 <h3 align="center">
-   <a href="https://dashboard.heroku.com/new?template=https://github.com/qnxanjali/SUHANIMUSIC"><img src="https://img.shields.io/badge/Deploy%20On%20Heroku-008080?style=for-the-badge&logo=heroku" width="200""/></a>
+   <a href="https://dashboard.heroku.com/new?template=https://github.com/qnxanjali/ANJALIMUSIC"><img src="https://img.shields.io/badge/Deploy%20On%20Heroku-008080?style=for-the-badge&logo=heroku" width="200""/></a>
    
 </h3>
 
