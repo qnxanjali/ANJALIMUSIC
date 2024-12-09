@@ -7,7 +7,7 @@ import httpx
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 start_txt = """**
-✪ ωεℓᴄσмє fσʀ ѕυнαиι ʀєρσѕ ✪
+✪ ωεℓᴄσмє fσʀ αиʝαℓι ʀєρσѕ ✪
 
  ➲ ᴀʟʟ ʀᴇᴘᴏ ᴇᴀsɪʟʏ ᴅᴇᴘʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ ᴡɪᴛʜᴏᴜᴛ ᴀɴʏ ᴇʀʀᴏʀ ✰
  
@@ -29,21 +29,21 @@ start_txt = """**
 async def start(_, msg):
     buttons = [
         [ 
-          InlineKeyboardButton("𝗔𝗗𝗗 𝗦𝗨𝗛𝗔𝗡𝗜", url=f"https://t.me/Suhani_X_Music_bot?startgroup=true")
+          InlineKeyboardButton("𝗔𝗗𝗗 𝗔𝗡𝗝𝗔𝗟𝗜 𝗥𝗢𝗕𝗢𝗧", url=f"https://t.me/TheAnjaliRobot?startgroup=true")
         ],
         [
-          InlineKeyboardButton("𝗛𝗘𝗟𝗣", url="https://t.me/VENOM_PRATAP"),
-          InlineKeyboardButton("𝗢𝗪𝗡𝗘𝗥", url="https://t.me/VENOM_PRATAP"),
+          InlineKeyboardButton("𝗛𝗘𝗟𝗣", url="https://t.me/AnjaliOwnerBot"),
+          InlineKeyboardButton("𝗢𝗪𝗡𝗘𝗥", url="https://t.me/AnjaliOwnerBot"),
           ],
                [
-                InlineKeyboardButton("𝗨𝗣𝗗𝗔𝗧𝗘", url="https://t.me/venompratapchat"),
+                InlineKeyboardButton("𝗨𝗣𝗗𝗔𝗧𝗘", url="https://t.me/ANJALINETWORK"),
 
 ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)
     
     await msg.reply_photo(
-        photo="https://envs.sh/10o.jpg",
+        photo="https://envs.sh/1ZY.jpg",
         caption=start_txt,
         reply_markup=reply_markup
     )
@@ -66,7 +66,7 @@ async def repo(_, message):
             list_of_users += f"{count}. [{user['login']}]({user['html_url']})\n"
             count += 1
 
-        text = f"""[𝖱𝖤𝖯𝖮 𝖫𝖨𝖭𝖪](https://github.com/Infamous-Hydra/YaeMiko) | [𝖦𝖱𝖮𝖴𝖯](https://t.me/venompratapchat)
+        text = f"""[𝖱𝖤𝖯𝖮 𝖫𝖨𝖭𝖪](https://github.com/Infamous-Hydra/YaeMiko) | [𝖦𝖱𝖮𝖴𝖯](https://t.me/ANJALIWORLD)
 | 𝖢𝖮𝖭𝖳𝖱𝖨𝖡𝖴𝖳𝖮𝖱𝖲 |
 ----------------
 {list_of_users}"""
