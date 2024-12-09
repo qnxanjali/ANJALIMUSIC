@@ -4,7 +4,7 @@ from pyrogram import filters, enums
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from SUHANIMUSIC.utils.suhani_ban import admin_filter
 
-BOT_ID = "7111848175"
+BOT_ID = "6722993465"
 
 @app.on_message(filters.command("unbanall") & admin_filter)
 async def unban_all(_, msg):
