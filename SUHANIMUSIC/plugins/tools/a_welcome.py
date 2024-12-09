@@ -7,8 +7,8 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFont
 from pyrogram import enums, filters
 from pyrogram.types import ChatMemberUpdated
 
-from VIPMUSIC import app
-from VIPMUSIC.utils.database import get_assistant
+from SUHANIMUSIC import app
+from SUHANIMUSIC.utils.database import get_assistant
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
