@@ -56,7 +56,6 @@ def welcomepic(pic, user, chatname, id, uname):
     welcome_font = ImageFont.truetype('SUHANIMUSIC/assets/font.ttf', size=60)
     draw.text((730, 250), f'STATUS: MEMBER', fill=(255, 255, 255), font=font)
     draw.text((730, 320), f'NAME : {unidecode(user)}', fill=(255, 255, 255), font=font)
-  #  draw.text((730, 320), f'NAME: {user}', fill=(255, 255, 255), font=font)
     draw.text((730, 380), f'ID: {id}', fill=(255, 255, 255), font=font)
   # draw.text((730, 380), f"USERNAME : {uname}", fill=(255, 255, 255), font=font)
     pfp_position = (151, 139)
