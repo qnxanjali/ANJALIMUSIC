@@ -11,7 +11,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 last_checked_time = None
 
-BOT_LIST = ["Venom_X_Music_bot","Suhani_X_Music_bot"]
+BOT_LIST = ["TheAnjaliMusicBot","TheAnjaliRobot"]
 
 
 @app.on_message(filters.command("botschk") & filters.user(OWNER_ID))
