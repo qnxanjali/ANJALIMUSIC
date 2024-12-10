@@ -44,6 +44,7 @@ yt-dlp
 youtube-search
 youtube-search-python
 gtts
+MukeshAPI
 git+https://github.com/AsmSafone/SafoneAPI
 git+https://github.com/TheChampu/TheAPI
 lexica-api==1.5.1
