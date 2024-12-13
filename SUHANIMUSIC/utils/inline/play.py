@@ -59,7 +59,12 @@ def stream_markup_timer(_, chat_id, played, dur):
     else: 
         bar = "🅜︎🅐︎🅗︎🅣︎🅞—♥️—🅐︎🅝︎🅙︎🅐︎🅛︎🅘︎"
     buttons = [
-         
+        [
+            InlineKeyboardButton(
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
+          ],         
           [
             InlineKeyboardButton(
                 text="✰ 𝖡ᴧ፝֠֩ʙꭎ ✰", url="https://t.me/Zhangweii",
@@ -68,14 +73,20 @@ def stream_markup_timer(_, chat_id, played, dur):
                 text="✰ 𝛅ᴏ፝֠֩𝛈ᴧ ✰", url="https://t.me/AnjaliOwnerBot",
             )
         ],
-          [ InlineKeyboardButton(text="✰ ᴍᴀ፝֩֠֠֩sᴛɪ ᴋɪ ʙᴀ፝֠֩֠֩sᴛɪ ✰", url=f"https://t.me/+b1gc4qrvfLZlNGI1")],
+          [InlineKeyboardButton(text="✰ ᴍᴀ፝֩֠֠֩sᴛɪ ᴋɪ ʙᴀ፝֠֩֠֩sᴛɪ ✰", url=f"https://t.me/+b1gc4qrvfLZlNGI1")],
           [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
         ]
     return buttons
 
 def stream_markup(_, chat_id):
     buttons = [
-        
+          [
+                  
+            InlineKeyboardButton(
+                text=f"{played} {bar} {dur}",
+                callback_data="GetTimer",
+            )
+         ],
          [
             InlineKeyboardButton(
                 text="✰ 𝖡ᴧ፝֠֩ʙꭎ ✰", url="https://t.me/Zhangweii",
@@ -84,7 +95,7 @@ def stream_markup(_, chat_id):
                 text="✰ 𝛅ᴏ፝֠֩𝛈ᴧ ✰", url="https://t.me/AnjaliOwnerBot",
             )
         ],
-        [ InlineKeyboardButton(text="✰ ᴍᴀ፝֩֠֠֩sᴛɪ ᴋɪ ʙᴀ፝֠֩֠֩sᴛɪ ✰", url=f"https://t.me/+b1gc4qrvfLZlNGI1")],
+        [InlineKeyboardButton(text="✰ ᴍᴀ፝֩֠֠֩sᴛɪ ᴋɪ ʙᴀ፝֠֩֠֩sᴛɪ ✰", url=f"https://t.me/+b1gc4qrvfLZlNGI1")],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     
     ]
