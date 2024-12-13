@@ -135,7 +135,6 @@ STRING5 = getenv("STRING_SESSION5", None)
 STRING6 = getenv("STRING_SESSION6", None)
 STRING7 = getenv("STRING_SESSION7", None)
 BANNED_USERS = filters.user()
-LOG_FILE_NAME = "SUHANIlogs.txt"
 adminlist = {}
 lyrical = {}
 votemode = {}
