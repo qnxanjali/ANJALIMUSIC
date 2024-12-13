@@ -36,7 +36,7 @@ DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
 
 # ----------------------------------------------------------------
 LOGGER_ID = int(getenv("LOGGER_ID", -1001970031336))
-SUB_LOG = int(getenv("SUB_LOG",-1001970031336))
+SUB_LOG = int(getenv("SUB_LOG", -1001970031336))
 # ----------------------------------------------------------------
 # ----------------------------------------------------------------
 OWNER_ID = int(getenv("OWNER_ID", 6260080241))
@@ -135,6 +135,7 @@ STRING5 = getenv("STRING_SESSION5", None)
 STRING6 = getenv("STRING_SESSION6", None)
 STRING7 = getenv("STRING_SESSION7", None)
 BANNED_USERS = filters.user()
+LOG_FILE_NAME = "SUHANIlogs.txt"
 adminlist = {}
 lyrical = {}
 votemode = {}
