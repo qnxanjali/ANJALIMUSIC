@@ -1,3 +1,6 @@
+import json
+import os
+
 from SUHANIMUSIC.core.bot import SUHANI
 from SUHANIMUSIC.core.dir import dirr
 from SUHANIMUSIC.core.git import git
@@ -26,3 +29,4 @@ Spotify = SpotifyAPI()
 Resso = RessoAPI()
 Telegram = TeleAPI()
 YouTube = YouTubeAPI()
+HELPABLE = {}
