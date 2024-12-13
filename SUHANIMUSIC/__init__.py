@@ -15,7 +15,7 @@ dirr()
 git()
 dbb()
 heroku()
-SUHANI()
+
 
 app = SUHANI()
 api = SafoneAPI()
@@ -31,4 +31,3 @@ Spotify = SpotifyAPI()
 Resso = RessoAPI()
 Telegram = TeleAPI()
 YouTube = YouTubeAPI()
-HELPABLE = {}
