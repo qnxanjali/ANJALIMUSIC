@@ -2,7 +2,6 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from config import BANNED_USERS, adminlist
-from strings import get_command
 from SUHANIMUSIC import app
 from SUHANIMUSIC.utils.database import (
     delete_authuser,
