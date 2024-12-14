@@ -15,7 +15,7 @@ from SUHANIMUSIC.utils.database import (
 )
 from SUHANIMUSIC.utils.decorators.language import language
 from SUHANIMUSIC.utils.formatters import alpha_to_int
-from config import adminlist, OWNER_ID, SUPPORT_CHAT, SUB_LOG, MAIN_OWNER
+from config import adminlist
 
 IS_BROADCASTING = False
 
@@ -23,15 +23,71 @@ IS_BROADCASTING = False
 @app.on_message(filters.command("broadcast") & SUDOERS)
 @language
 async def braodcast_message(client, message, _):
-    if message.from_user.id != MAIN_OWNER:
-        return await message.reply_text(
-            f"» 🚀 Wᴀɴᴛ ᴛᴏ ʙʀᴏᴀᴅᴄᴀsᴛ ʏᴏᴜʀ ᴏᴡɴ ᴍᴇssᴀɢᴇs?\n\nUɴʟᴏᴄᴋ ᴇxᴄʟᴜsɪᴠᴇ ᴀᴄᴄᴇss ᴡɪᴛʜ ᴏᴜʀ sᴜʙsᴄʀɪᴘᴛɪᴏɴ ᴘʟᴀɴ!\n Jᴏɪɴ [PʀᴏBᴏᴛs]({SUPPORT_CHAT}) ᴏʀ DM @AnjaliOwnerBot ғᴏʀ ᴍᴏʀᴇ ᴅᴇᴛᴀɪʟs ᴀɴᴅ ɢᴇᴛ sᴛᴀʀᴛᴇᴅ !"
-        )
-
     global IS_BROADCASTING
+
+    if "-wfchat" in message.text or "-wfuser" in message.text:
+        if not message.reply_to_message or not (message.reply_to_message.photo or message.reply_to_message.text):
+            return await message.reply_text("Please reply to a text or image message for broadcasting.")
+
+        # Extract data from the replied message
+        if message.reply_to_message.photo:
+            content_type = 'photo'
+            file_id = message.reply_to_message.photo.file_id
+        else:
+            content_type = 'text'
+            text_content = message.reply_to_message.text
+            
+        caption = message.reply_to_message.caption
+        reply_markup = message.reply_to_message.reply_markup if hasattr(message.reply_to_message, 'reply_markup') else None
+
+        IS_BROADCASTING = True
+        await message.reply_text(_["broad_1"])
+
+        if "-wfchat" in message.text or "-wfuser" in message.text:
+            # Broadcasting to chats
+            sent_chats = 0
+            chats = [int(chat["chat_id"]) for chat in await get_served_chats()]
+            for i in chats:
+                try:
+                    if content_type == 'photo':
+                        await app.send_photo(chat_id=i, photo=file_id, caption=caption, reply_markup=reply_markup)
+                    else:
+                        await app.send_message(chat_id=i, text=text_content, reply_markup=reply_markup)
+                    sent_chats += 1
+                    await asyncio.sleep(0.2)
+                except FloodWait as fw:
+                    await asyncio.sleep(fw.x)
+                except:
+                    continue
+            await message.reply_text(f"Broadcast to chats completed! Sent to {sent_chats} chats.")
+
+        if "-wfuser" in message.text:
+            # Broadcasting to users
+            sent_users = 0
+            users = [int(user["user_id"]) for user in await get_served_users()]
+            for i in users:
+                try:
+                    if content_type == 'photo':
+                        await app.send_photo(chat_id=i, photo=file_id, caption=caption, reply_markup=reply_markup)
+                    else:
+                        await app.send_message(chat_id=i, text=text_content, reply_markup=reply_markup)
+                    sent_users += 1
+                    await asyncio.sleep(0.2)
+                except FloodWait as fw:
+                    await asyncio.sleep(fw.x)
+                except:
+                    continue
+            await message.reply_text(f"Broadcast to users completed! Sent to {sent_users} users.")
+
+        IS_BROADCASTING = False
+        return
+
+    
     if message.reply_to_message:
         x = message.reply_to_message.id
         y = message.chat.id
+        reply_markup = message.reply_to_message.reply_markup if message.reply_to_message.reply_markup else None
+        content = None
     else:
         if len(message.command) < 2:
             return await message.reply_text(_["broad_2"])
@@ -62,7 +118,7 @@ async def braodcast_message(client, message, _):
         for i in chats:
             try:
                 m = (
-                    await app.forward_messages(i, y, x)
+                    await app.copy_message(chat_id=i, from_chat_id=y, message_id=x, reply_markup=reply_markup)
                     if message.reply_to_message
                     else await app.send_message(i, text=query)
                 )
@@ -101,7 +157,7 @@ async def braodcast_message(client, message, _):
         for i in served_users:
             try:
                 m = (
-                    await app.forward_messages(i, y, x)
+                    await app.copy_message(chat_id=i, from_chat_id=y, message_id=x, reply_markup=reply_markup)
                     if message.reply_to_message
                     else await app.send_message(i, text=query)
                 )
@@ -122,7 +178,7 @@ async def braodcast_message(client, message, _):
     if "-assistant" in message.text:
         aw = await message.reply_text(_["broad_5"])
         text = _["broad_6"]
-        from SUHANIMUSIC.core.userbot import assistants
+        from AviaxMusic.core.userbot import assistants
 
         for num in assistants:
             sent = 0
@@ -149,7 +205,6 @@ async def braodcast_message(client, message, _):
         except:
             pass
     IS_BROADCASTING = False
-
 
 
 async def auto_clean():
