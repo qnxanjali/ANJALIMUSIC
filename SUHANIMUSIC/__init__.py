@@ -5,7 +5,6 @@ from SUHANIMUSIC.core.bot import SUHANI
 from SUHANIMUSIC.core.dir import dirr
 from SUHANIMUSIC.core.git import git
 from SUHANIMUSIC.core.userbot import Userbot
-from SUHANIMUSIC.core.youtube import SUHANI
 from SUHANIMUSIC.misc import dbb, heroku
 
 from SafoneAPI import SafoneAPI
@@ -15,7 +14,6 @@ dirr()
 git()
 dbb()
 heroku()
-SUHANI()
 
 app = SUHANI()
 api = SafoneAPI()
