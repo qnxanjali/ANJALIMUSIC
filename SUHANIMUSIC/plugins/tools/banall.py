@@ -6,7 +6,7 @@ from pyrogram import Client, enums
 from pyrogram import filters
 from pyrogram.errors import ChatAdminRequired
 from pyrogram.types import ChatPermissions, ChatPrivileges, Message
-from AnonXMusic import app
+from SUHANIMUSIC import app
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums import ChatType, ChatMemberStatus
 from pyrogram.errors import (
